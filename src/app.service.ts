@@ -21,6 +21,7 @@ export class AppService {
   }
 
   // ─────CPU heavy  API helpers ───────────────────────────────
+  // impl should move to seperate c# grpc service for intensive tasks 
   calcFib(n: number) {
     this.logger.debug(`Fib single ${n}`);
     return this.pool.run({ task: 'fibonacci', data: n });
