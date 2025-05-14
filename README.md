@@ -50,7 +50,7 @@ npm install pino-http nestjs-pino
 npm install --save-dev pino-pretty
 npm install zod
 
-npm install piscina
+npm install piscina (use for worker thread of cpu heavy tasks , later be switched by grpc calls to c#)
 
 
 then run using:
