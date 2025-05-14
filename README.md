@@ -32,7 +32,69 @@ nestjs api server template
 
 ```bash
 $ npm install
+
+was created by using:
+npm install -g @nestjs/cli
+npm install -g pm2 (not needed pm2 start dist/main.js -i max --name test-api , as docker takes care of it)
+
+nest new my-api
+cd my-api
+
+
+npm install --save-dev @swc/core @swc/cli
+npm install --save-dev @types/node
+npm install @nestjs/platform-fastify
+npm install @fastify/cors
+
+npm install pino-http nestjs-pino
+npm install --save-dev pino-pretty
+npm install zod
+
+npm install piscina
+
+
+then run using:
+npm run start:dev
+
+or:
+npm run build
+npm run start:prod
+
 ```
+Modify the nest-cli.json file in your project root to use the SWC compiler:
+{
+  "compilerOptions": {
+    "builder": "swc",
+    "typeCheck": true
+  }
+}
+
+.swcrc
+{
+  "$schema": "https://json.schemastore.org/swcrc",
+  "sourceMaps": true,
+  "minify": true,
+  "jsc": {
+    "target": "esnext",
+    "parser": {
+      "syntax": "typescript",
+      "decorators": true,
+      "dynamicImport": true
+    },
+    "transform": {
+      "legacyDecorator": true,
+      "decoratorMetadata": true
+    },
+    "keepClassNames": true,
+    "minify": {
+      "compress": true,
+      "mangle": false
+  }
+  },
+  "module": {
+    "type": "commonjs"
+  }
+}
 
 ## Compile and run the project
 
