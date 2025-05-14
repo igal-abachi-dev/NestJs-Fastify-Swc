@@ -60,6 +60,10 @@ or:
 npm run build
 npm run start:prod
 
+
+also for deploy: nestjs and c# are on render com , 
+postgresdb in on neon
+
 ```
 Modify the nest-cli.json file in your project root to use the SWC compiler:
 {
